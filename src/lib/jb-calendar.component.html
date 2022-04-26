@@ -1,0 +1,52 @@
+<div style="background-color: rgb(168, 168, 147);width: 400px;align-items: center;border-radius: 10px;" >
+    <div style="text-align: center;" >
+        <select name="month" id="month" (change)="set_month($event)" style="padding: 5px;border-radius: 5px;border: 1px solid #ccc;margin: 5px;" >
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">Octomebr</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+
+        </select>
+        <select name="month" id="month" (change)="set_year($event)" style="width: 100px;padding: 5px;border-radius: 5px;border: 1px solid #ccc;margin: 5px;" >
+            <option value="{{ind}}" *ngFor="let ind of years(1990,2070);let i = index">{{ ind }}</option>
+        </select>
+    </div>
+    <div
+        style="display: grid;grid-template-columns: repeat(7,1fr);border-radius: 7px;padding: 5px;">
+        <div style="margin: 2px;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+    text-align: center;background-color: rgb(87, 87, 143);" *ngFor="let ind of week_days;let i = index">
+            {{ ind }}
+        </div>
+
+        <div style="margin: 2px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;" *ngFor="let ind of numSequence(buffer_day);let i = index">
+            <!-- {{ i }} -->
+        </div>
+        <div style="margin: 2px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;background-color: rgb(201, 201, 250);
+    border-radius: 5px;"
+            *ngFor="let ind of numSequence(total_days);let i = index">
+            {{ i + 1 }}
+        </div>
+
+    </div>
+
+</div>
