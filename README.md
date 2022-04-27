@@ -1,24 +1,45 @@
-# JbCalendar
+# Jb-Calendar-1
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
-## Code scaffolding
+## Install Library In Project
+```
+npm i jb-calendar-1
+```
 
-Run `ng generate component component-name --project jb-calendar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project jb-calendar`.
-> Note: Don't forget to add `--project jb-calendar` or else it will be added to the default project in your `angular.json` file. 
+### app.module.ts
 
-## Build
+```
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-Run `ng build jb-calendar` to build the project. The build artifacts will be stored in the `dist/` directory.
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
-## Publishing
+import { JbCalendarModule } from "jb-calendar";
 
-After building your library with `ng build jb-calendar`, go to the dist folder `cd dist/jb-calendar` and run `npm publish`.
 
-## Running unit tests
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    JbCalendarModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-Run `ng test jb-calendar` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### HTML File (index.html)
+
+> Add Below tag to add calendar
+
+```
+<lib-jb-calendar></lib-jb-calendar>
+```
